@@ -4,9 +4,15 @@ class StackADT:
 
     # def = keyword to define a function/method
     # __init__ = special function (constructor) that runs automatically when an object is created
+    #revise oops
+    #jab ek esa function ho jisse use krna hi krna hai tab usko constructor bna doge.
+    #class ka object bante hi contructor apne aap vaha chala jaata hai , baar baar run krne vaali condition khatm hojaati hai 
     # (self) = the current object itself (like "this" in other languages)
+    #self obejct , init constructor
+
     def __init__(self):
 
+        #self object hai usme data store krdiya
         # self.data = a variable (attribute) stored inside the object
         # data = name of the attribute that will hold stack elements
         # = means assignment (store the right side into the left side)
@@ -14,6 +20,7 @@ class StackADT:
         # # ... = comment (Python ignores comments)
         self.data = []  # list end will be the "top" of the stack
 
+    #yaha pr alag se self btani ki need nahi hai , apne aap data utha lega 
     # push = method name for inserting an element in stack
     # (self, x) -> x is the value we want to push
     def push(self, x):
@@ -23,6 +30,7 @@ class StackADT:
         # (x) = add the value x
         self.data.append(x)
 
+    #check for underflow first fir uske baad pop hoga 
     # pop = method name for removing top element from stack
     def pop(self):
 
@@ -41,6 +49,7 @@ class StackADT:
         # since we treat end as top, this removes the stack top
         return self.data.pop()
 
+    #check for underflow again , then show the top element
     # peek = method name for seeing the top element without removing it
     def peek(self):
 
@@ -52,6 +61,7 @@ class StackADT:
 
         # return self.data[-1]
         # [-1] means last element of list (Python supports negative indexing)
+        #stack me last in is forst out , isliye top element is the last element 
         # -1 = last index, -2 = second last, etc.
         return self.data[-1]
 
@@ -81,7 +91,7 @@ class StackADT:
 # reverse_string_using_stack = function name
 # (s) = parameter; s will store the input string given by user
 def reverse_string_using_stack(s):
-
+    #ek object bnaya and then for loop lgaya , jo jo pop hota gya usko nyi list me pop krdiya
     # st = variable name (short for stack)
     # StackADT() = creating a new stack object by calling class constructor
     st = StackADT()
@@ -119,10 +129,11 @@ def reverse_string_using_stack(s):
 
 # main = function that runs the menu program (good practice to separate logic)
 def main():
-
+    #stack adt is your class here 
     # create one stack for menu operations
     st = StackADT()
 
+    #jab true chalo , varna fir exit hojao
     # while True = infinite loop (keeps menu running until we break)
     # True is a boolean value meaning "yes/continue"
     while True:
@@ -156,6 +167,8 @@ def main():
             # val = user input value to push
             val = input("Enter value to push: ")
 
+            #upar st=stackadt define kiya hai 
+            #st is the object , kiska ? class ka ? therefore is obejct ko saari permission hai sab functions ko use krne ki
             # st.push(val) pushes value onto stack
             st.push(val)
 
@@ -233,4 +246,27 @@ if __name__ == "__main__":
     # calling main() to start the program
     main()
     #for checking
-    
+    #main function tabhi run karega jab bologe kisi file ko run krne 
+
+
+
+
+#written self   
+#self testing:
+#logic building first 
+class stackADT:
+  def __init__(self):
+      self.data = []
+  def push(self, x):
+      self.data.append(x)
+  def pop(self):
+      if self.is_empty():
+          return None
+      return self.data.pop()
+  def peek(self):
+      if self.is_empty():
+          return None
+      return self.data[-1]
+  def is_empty(self):
+      return len(self.data) ==0
+  
