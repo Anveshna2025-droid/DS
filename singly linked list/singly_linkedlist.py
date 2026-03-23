@@ -50,7 +50,7 @@ class LinkedList:
 ll = LinkedList()
 
 while True:
-    print("\n1. Push (Start)  2. Append (End)  3. Remove  4. Display  5. Exit")
+    print("\n1. Push (Start)  \n2. Append (End)  3. Remove  4. Display  5. Exit")
     choice = input("Enter choice (1-5): ")
 
     if choice == '1':
